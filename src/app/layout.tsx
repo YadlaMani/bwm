@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { ClerkProvider } from "@clerk/nextjs";
+import AppWalletProvider from "@/components/AppWalletProvider";
+import { Appbar } from "@/components/Appbar";
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import { Toaster } from "sonner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +31,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AppWalletProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ClerkProvider>
+              <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-background">
+                <Appbar />
+                {children}
+                <Toaster />
+              </div>
+            </ClerkProvider>
+          </ThemeProvider>
+        </AppWalletProvider>
       </body>
     </html>
   );
