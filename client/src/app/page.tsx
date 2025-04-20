@@ -15,14 +15,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen p-8 gap-8 ">
+    <div className="flex flex-col min-h-screen p-8 gap-8 md:gap-12 ">
       {/* Hero Section */}
-      <section className="w-full mx-auto max-w-6xl">
+      <section className="w-full mx-auto max-w-7xl p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <div className="inline-block px-4 py-2 bg-green-300 rounded-md border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-bold">
-              Redefining Digital Ownership
-            </div>
+          <div className="space-y-8">
             <h1 className="text-5xl sm:text-6xl font-black tracking-tight">
               Progressive Ownership
               <span className="block text-yellow-400">for Digital Assets</span>
@@ -33,15 +30,17 @@ export default function Home() {
               progressive ownership.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg">Start Trading</Button>
+              <Button size="lg" className="bg-green-200 hover:bg-green-200">
+                Start Trading
+              </Button>
               <Button variant="outline" size="lg">
                 Explore Cards
               </Button>
             </div>
           </div>
 
-          <div className="relative h-[350px] md:h-[450px] rounded-lg border-2 border-black overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-300 via-purple-400 to-pink-400 animate-gradient-x flex items-center justify-center">
+          <div className="relative h-[350px] md:h-[500px] rounded-lg border-2 border-black overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="absolute inset-0 bg-purple-200 flex items-center justify-center">
               <div className="grid grid-cols-2 gap-4 p-4 transform rotate-6">
                 {[1, 2, 3, 4].map((i) => (
                   <div
@@ -59,8 +58,8 @@ export default function Home() {
       <Separator />
 
       {/* Featured Cards Section */}
-      <section className="w-full mx-auto max-w-6xl">
-        <div className="flex flex-col gap-6">
+      <section className="w-full mx-auto max-w-7xl mb-8">
+        <div className="flex flex-col gap-6 ">
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-black">Featured Cards</h2>
             <Button variant="outline">View All</Button>
@@ -99,7 +98,7 @@ export default function Home() {
       <Separator />
 
       {/* Features Section */}
-      <section className="w-full mx-auto max-w-6xl">
+      <section className="w-full mx-auto max-w-7xl">
         <h2 className="text-3xl font-black mb-6">Game Features</h2>
 
         <Tabs defaultValue="ownership">
@@ -116,7 +115,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold">
                   Progressive Ownership Model
                 </h3>
-                <p>
+                <p className="dark:text-gray-300">
                   Our unique system allows players to gradually increase their
                   ownership stake in digital assets through gameplay, trading,
                   and community participation.
@@ -128,22 +127,26 @@ export default function Home() {
                     "Collaborate with other players",
                     "Build your digital portfolio",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <div className="size-6 rounded-full bg-green-300 border-2 border-black flex items-center justify-center text-xs font-bold">
+                    <li
+                      key={i}
+                      className="flex items-center gap-2 dark:text-gray-300">
+                      <div className="size-6 rounded-full bg-green-300 border-2 border-black dark:border-white flex items-center justify-center text-xs font-bold text-black">
                         ✓
                       </div>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Button>Learn More</Button>
+                <Button variant={"outline"}>Learn More</Button>
               </div>
-              <div className="rounded-lg border-2 border-black overflow-hidden bg-green-100 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] p-6 flex items-center justify-center">
-                <div className="w-full max-w-xs aspect-square rounded-full border-2 border-black relative overflow-hidden bg-yellow-300 flex items-center justify-center shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]">
+              <div className="rounded-lg border-2 border-black dark:border-white overflow-hidden bg-green-100 dark:bg-green-900/30 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,0.8)] flex items-center justify-center">
+                <div className=" h-[80%] aspect-square rounded-full border-2 border-black dark:border-white relative overflow-hidden bg-white dark:bg-white flex items-center justify-center shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,0.8)]">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-3/4 h-3/4 rounded-full border-4 border-dashed border-black animate-spin-slow"></div>
+                    <div className="w-3/4 h-3/4 rounded-full border-4 border-dashed border-black dark:border-white animate-spin-slow"></div>
                   </div>
-                  <div className="z-10 text-2xl font-black">OWNERSHIP</div>
+                  <div className="z-10 text-xl font-black text-black dark:text-white">
+                    OWNERSHIP
+                  </div>
                 </div>
               </div>
             </div>
@@ -155,7 +158,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold">
                   Advanced Card Trading System
                 </h3>
-                <p>
+                <p className="dark:text-gray-300">
                   Trade your digital assets with other players through our
                   secure and transparent marketplace. Set your own prices and
                   negotiate deals in real-time.
@@ -167,23 +170,25 @@ export default function Home() {
                     "Trading history tracking",
                     "Value appreciation potential",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <div className="size-6 rounded-full bg-blue-300 border-2 border-black flex items-center justify-center text-xs font-bold">
+                    <li
+                      key={i}
+                      className="flex items-center gap-2 dark:text-gray-300">
+                      <div className="size-6 rounded-full bg-blue-300 border-2 border-black dark:border-white flex items-center justify-center text-xs font-bold text-black">
                         ✓
                       </div>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Button variant="secondary">Open Marketplace</Button>
+                <Button variant="outline">Open Marketplace</Button>
               </div>
-              <div className="rounded-lg border-2 border-black overflow-hidden bg-blue-100 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] p-6 flex items-center justify-center">
+              <div className="rounded-lg border-2 border-black dark:border-white overflow-hidden bg-blue-100 dark:bg-blue-900/30 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,0.8)] p-6 flex items-center justify-center">
                 <div className="grid grid-cols-2 gap-4 transform -rotate-6">
                   {[1, 2].map((i) => (
                     <div
                       key={i}
-                      className="w-28 h-40 rounded-lg border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center transform hover:scale-105 transition-transform">
-                      <span className="text-2xl font-black text-black">
+                      className="w-28 h-40 rounded-lg border-2 border-black dark:border-white bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.8)] flex items-center justify-center transform hover:scale-105 transition-transform">
+                      <span className="text-2xl font-black text-black dark:text-white">
                         #{i}
                       </span>
                     </div>
@@ -199,7 +204,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold">
                   Built on Blockchain Technology
                 </h3>
-                <p>
+                <p className="dark:text-gray-300">
                   Our platform leverages the security and transparency of
                   blockchain to ensure true ownership of your digital assets.
                   Every transaction is verifiable and permanent.
@@ -211,17 +216,19 @@ export default function Home() {
                     "Interoperability with wallets",
                     "Cross-platform compatibility",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <div className="size-6 rounded-full bg-yellow-300 border-2 border-black flex items-center justify-center text-xs font-bold">
+                    <li
+                      key={i}
+                      className="flex items-center gap-2 dark:text-gray-300">
+                      <div className="size-6 rounded-full bg-yellow-300 border-2 border-black dark:border-white flex items-center justify-center text-xs font-bold text-black">
                         ✓
                       </div>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Button>Connect Wallet</Button>
+                <Button variant={"outline"}>Connect Wallet</Button>
               </div>
-              <div className="rounded-lg border-2 border-black overflow-hidden bg-yellow-100 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] p-6 flex items-center justify-center">
+              <div className="rounded-lg border-2 border-black dark:border-white overflow-hidden bg-yellow-100 dark:bg-yellow-900/30 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,0.8)] p-6 flex items-center justify-center">
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="grid grid-cols-3 grid-rows-3 gap-2">
                     {Array(9)
@@ -229,8 +236,8 @@ export default function Home() {
                       .map((_, i) => (
                         <div
                           key={i}
-                          className="w-16 h-16 rounded-md border-2 border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
-                          <div className="w-8 h-8 rounded-md bg-yellow-300 border-2 border-black"></div>
+                          className="w-16 h-16 rounded-md border-2 border-black dark:border-white bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.8)] flex items-center justify-center">
+                          <div className="w-8 h-8 rounded-md bg-yellow-300 dark:bg-yellow-500 border-2 border-black dark:border-white"></div>
                         </div>
                       ))}
                   </div>
@@ -243,7 +250,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold">Daily Rewards System</h3>
-                <p>
+                <p className="dark:text-gray-300">
                   Log in daily to earn rewards, special cards, and ownership
                   tokens. Our rewards system is designed to keep you engaged and
                   rewarded for your loyalty.
@@ -255,24 +262,21 @@ export default function Home() {
                     "Special event rewards",
                     "Surprise card drops",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <div className="size-6 rounded-full bg-red-300 border-2 border-black flex items-center justify-center text-xs font-bold">
+                    <li
+                      key={i}
+                      className="flex items-center gap-2 dark:text-gray-300">
+                      <div className="size-6 rounded-full bg-red-300 border-2 border-black dark:border-white flex items-center justify-center text-xs font-bold text-black">
                         ✓
                       </div>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Button variant="destructive">Claim Today's Reward</Button>
+                <Button variant="outline">Claim Today's Reward</Button>
               </div>
-              <div className="rounded-lg border-2 border-black overflow-hidden bg-red-100 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] p-6 flex items-center justify-center">
-                <div className="w-40 h-40 rounded-md border-4 border-black bg-white shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-full h-full flex items-center justify-center animate-pulse">
-                      <div className="w-24 h-24 rounded-full bg-yellow-300 border-2 border-black"></div>
-                    </div>
-                  </div>
-                  <div className="z-10 text-xl font-black">
+              <div className="rounded-lg border-2 border-black dark:border-white overflow-hidden bg-red-100 dark:bg-red-900/30 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,0.8)] p-6 flex items-center justify-center">
+                <div className="w-40 h-40 rounded-md border-4 border-black dark:border-white bg-white dark:bg-gray-800 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-[5px_5px_0px_0px_rgba(255,255,255,0.8)] flex items-center justify-center relative">
+                  <div className="z-10 text-xl font-black text-black dark:text-white">
                     DAILY
                     <br />
                     REWARD
@@ -287,7 +291,7 @@ export default function Home() {
       <Separator />
 
       {/* Community Section */}
-      <section className="w-full mx-auto max-w-6xl">
+      <section className="w-full mx-auto max-w-7xl">
         <div className="flex flex-col gap-6">
           <h2 className="text-3xl font-black">Community Traders</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -315,8 +319,8 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full mx-auto max-w-6xl mt-8">
-        <div className="rounded-lg border-4 border-black bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+      <section className="w-full mx-auto max-w-7xl mt-8">
+        <div className="rounded-lg border-4 border-black bg-blue-200 p-16 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform hover:-rotate-1 hover:translate-y-1 transition-all duration-500">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="flex-1 space-y-4">
               <h2 className="text-4xl font-black">
@@ -333,11 +337,6 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="flex-1 flex justify-center">
-              <div className="w-40 h-40 rounded-full border-4 border-black bg-yellow-300 flex items-center justify-center text-3xl font-black shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transform -rotate-6">
-                JOIN NOW
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -348,10 +347,10 @@ export default function Home() {
 // Helper function to get different gradient colors for cards
 function getGradientColor(index: number) {
   const colors = [
-    "from-yellow-200 to-yellow-400",
-    "from-blue-200 to-blue-400",
-    "from-green-200 to-green-400",
-    "from-pink-200 to-pink-400",
+    "from-blue-200 to-blue-300",
+    "from-green-200 to-green-300",
+    "from-pink-200 to-pink-300",
+    "from-yellow-200 to-yellow-300",
   ];
   return colors[index % colors.length];
 }

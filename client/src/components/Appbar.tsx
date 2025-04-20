@@ -28,8 +28,7 @@ export function Appbar() {
       {/* Mobile Menu Button */}
       <button
         className="md:hidden text-gray-800 dark:text-white"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
+        onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 
@@ -38,7 +37,7 @@ export function Appbar() {
         <SignedOut>
           <SignInButton />
           <SignUpButton mode="modal">
-            <Button>Get Started</Button>
+            <Button variant="outline">Get Started</Button>
           </SignUpButton>
         </SignedOut>
 
