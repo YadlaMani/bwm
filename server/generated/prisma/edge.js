@@ -127,7 +127,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\Projects-Building\\bwm\\server\\generated\\prisma",
+      "value": "/Users/ananyapappula/Development/breakdown-hackathon/bwm/server/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -136,17 +136,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "darwin-arm64",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "D:\\Projects-Building\\bwm\\server\\prisma\\schema.prisma",
+    "sourceFilePath": "/Users/ananyapappula/Development/breakdown-hackathon/bwm/server/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.6.0",
@@ -155,11 +154,12 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://neondb_owner:npg_Q3VUnSB1Wpsa@ep-fancy-rain-a1nmk4zy-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
+        "value": null
       }
     }
   },
